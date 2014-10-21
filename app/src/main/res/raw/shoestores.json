@@ -1,0 +1,32 @@
+{  
+   "shoeStores":[  
+      {  
+         "id":1,
+         "name":"Aria Shoes",
+         "address":"Calle 23 x 19 y 17",
+         "phoneNumber":"9971120789",
+         "webSite":"www.kokomusoft.com",
+         "openFrom":[  
+            {  
+               "timeMorning":"8am - 2pm",
+               "timeLate":"4pm - 8pm"
+            }
+         ],
+         "image":"R.drawable.superior_room"
+      },
+      {  
+         "id":2,
+         "name":"Zoo Shoes",
+         "address":"Calle 32 x 13 y 17",
+         "phoneNumber":"9971120789",
+         "webSite":"www.kokomusoft.com",
+         "openFrom":[  
+            {  
+               "timeMorning":"8am - 2pm",
+               "timeLate":"4pm - 8pm"
+            }
+         ],
+         "image":"Hotel_Revenue_Croie.jpg"
+      }
+   ]
+}

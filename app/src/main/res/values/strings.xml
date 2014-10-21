@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Explore Ticul</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="content_desc_explore_ticul">Explore Ticul</string>
+    <string name="content_desc_shoes_shop">Shoes Shop</string>
+    <string name="content_desc_handcrafts">HandCrafts</string>
+    <string name="content_desc_where_to_eat">Where to eat</string>
+    <string name="content_desc_hotels">Hotels</string>
+    <string name="content_desc_help">Help</string>
+    <string name="discover_ticul_text">Discover</string>
+    <string name="shoe_makers_text">Shoes</string>
+    <string name="handcrafts_text">HandCrafts</string>
+    <string name="hotels_text">Hotels</string>
+    <string name="restaurants_text">Restaurants</string>
+    <string name="help_text">Help</string>
+    <string name="title_activity_activity_explore">Activity Explore</string>
+    <string name="hello_blank_fragment">Hello blank fragment olle cy</string>
+    <string name="title_shoestore_list">Shoes stores</string>
+    <string name="title_shoestore_detail">Shoe store Detail</string>
+    <string name="hotel_name_list">Hotel Revenue croie</string>
+    <string name="hotel_direction_list">Calle 23 x 9 y 18c</string>
+    <string name="list_hotel_image_desc">Hotel Image</string>
+    <string name="button_back_label">back</string>
+    <string name="title_activity_maps">Map</string>
+
+</resources>
