@@ -34,8 +34,8 @@ public class ShoestoreDetailFragment extends Fragment {
     public static final String ARG_ITEM_ID = "item_id";
     OnFragmentSendText mSendText;
     private ShoeStore shoeStore;
-    private ArrayList<ShoeStore> shoeStores = new ArrayList<ShoeStore>();
-    ArrayList<String> horarios = new ArrayList<String>();
+    private ArrayList<ShoeStore> shoeStores = new ArrayList<>();
+    ArrayList<String> horarios = new ArrayList<>();
 
     public interface OnFragmentSendText{
         public void onSendText(String text);
@@ -161,6 +161,18 @@ public class ShoestoreDetailFragment extends Fragment {
                     transaction.addToBackStack(null);
                     transaction.commit();
 
+                }
+            });
+
+            rootView.findViewById(R.id.howToGetButton).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    GoogleMapsFragment mapsFragment = new GoogleMapsFragment();
+                    FragmentTransaction transaction = getActivity().getFragmentManager().beginTransaction();
+                    transaction.setTransition(FragmentTransaction.TRANSIT_UNSET);
+                    transaction.replace(R.id.shoestore_detail_container, mapsFragment, "mapsFragment");
+                    transaction.addToBackStack(null);
+                    transaction.commit();
                 }
             });
 
