@@ -2,7 +2,6 @@ package com.kokomusoft.exploraticul;
 
 import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
-import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -10,12 +9,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.os.Build;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
 
 public class MainActivity extends ActionBarActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,6 +25,7 @@ public class MainActivity extends ActionBarActivity {
                     .add(R.id.container, new PlaceholderFragment())
                     .commit();
         }
+
 
 
     }
@@ -75,7 +75,6 @@ public class MainActivity extends ActionBarActivity {
             imageButtonShoeMakers.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(rootView.getContext(), "Boton Zapaterias", Toast.LENGTH_SHORT).show();
                     Intent shoeStoresIntent = new Intent(rootView.getContext(), ShoestoreListActivity.class);
                     startActivity(shoeStoresIntent);
                 }
@@ -85,7 +84,8 @@ public class MainActivity extends ActionBarActivity {
             imageButtonHandCrafts.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(rootView.getContext(), "Boton Artesanias", Toast.LENGTH_SHORT).show();
+                    Intent handCraftStoresIntent = new Intent(rootView.getContext(), HandCraftStoreListActivity.class);
+                    startActivity(handCraftStoresIntent);
                 }
             });
 
@@ -93,7 +93,9 @@ public class MainActivity extends ActionBarActivity {
             imageButtonRestaurants.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(rootView.getContext(), "Boton Restaurantes", Toast.LENGTH_SHORT).show();
+                    Intent restaurantsIntent = new Intent(rootView.getContext(),
+                            RestaurantListActivity.class);
+                    startActivity(restaurantsIntent);
                 }
             });
 
@@ -101,7 +103,8 @@ public class MainActivity extends ActionBarActivity {
             imageButtonHotels.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(rootView.getContext(), "Boton Hoteles", Toast.LENGTH_SHORT).show();
+                    Intent hotelsIntent = new Intent(rootView.getContext(), HotelListActivity.class);
+                    startActivity(hotelsIntent);
                 }
             });
 
@@ -109,7 +112,8 @@ public class MainActivity extends ActionBarActivity {
             imageButtonHelp.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(rootView.getContext(), "Boton Ayuda", Toast.LENGTH_SHORT).show();
+                    Intent helpIntent = new Intent(rootView.getContext(), AboutActivity.class);
+                    startActivity(helpIntent);
                 }
             });
 

@@ -19,7 +19,8 @@ import android.webkit.WebView;
  * This activity is mostly just a 'shell' activity containing nothing
  * more than a {@link ShoestoreDetailFragment}.
  */
-public class ShoestoreDetailActivity extends ActionBarActivity implements ShoestoreDetailFragment.OnFragmentSendText{
+public class ShoestoreDetailActivity extends ActionBarActivity implements
+        ShoestoreDetailFragment.OnFragmentSendText{
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,14 +52,6 @@ public class ShoestoreDetailActivity extends ActionBarActivity implements Shoest
                     .addToBackStack(null)
                     .commit();
         }
-        /*else{
-            Intent intent = getIntent();
-            String url = intent.getStringExtra("websiteUrl");
-            Bundle bundle = new Bundle();
-            bundle.putString("websiteUrl", "From Activity");
-            WebViewFragment webViewFragment = new WebViewFragment();
-            webViewFragment.setArguments(bundle);
-        }*/
     }
 
     @Override

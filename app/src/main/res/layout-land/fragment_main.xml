@@ -36,7 +36,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="1dp"
                 android:background="#00000000"
-                android:src="@drawable/ic_kokomusoft_logo"
+                android:src="@drawable/discover"
                 android:contentDescription="@string/content_desc_explore_ticul" />
 
             <TextView
@@ -63,7 +63,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="1dp"
                 android:background="#00000000"
-                android:src="@drawable/ic_kokomusoft_logo"
+                android:src="@drawable/shoe_stores"
                 android:contentDescription="@string/content_desc_shoes_shop"/>
 
             <TextView
@@ -89,7 +89,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="1dp"
                 android:background="#00000000"
-                android:src="@drawable/ic_kokomusoft_logo"
+                android:src="@drawable/handcrafts"
                 android:contentDescription="@string/content_desc_handcrafts"/>
 
             <TextView
@@ -126,7 +126,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:background="#00000000"
-                android:src="@drawable/ic_kokomusoft_logo"
+                android:src="@drawable/restaurants"
                 android:contentDescription="@string/content_desc_where_to_eat"/>
 
             <TextView
@@ -154,7 +154,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:background="#00000000"
-                android:src="@drawable/ic_kokomusoft_logo"
+                android:src="@drawable/hotels"
                 android:contentDescription="@string/content_desc_hotels"/>
 
             <TextView
@@ -180,7 +180,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="1dp"
                 android:background="#00000000"
-                android:src="@drawable/ic_kokomusoft_logo"
+                android:src="@drawable/about"
                 android:contentDescription="@string/content_desc_help"/>
 
             <TextView

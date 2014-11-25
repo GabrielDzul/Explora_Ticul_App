@@ -2,6 +2,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/shoestore_detail_container"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="com.kokomusoft.exploraticul.ShoestoreDetailActivity"
-    tools:ignore="MergeRootFrame" />
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context="com.kokomusoft.exploraticul.ShoestoreDetailActivity" />

@@ -8,6 +8,8 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
+import android.widget.ToggleButton;
 
 import com.google.android.gms.maps.CameraUpdate;
 import com.google.android.gms.maps.CameraUpdateFactory;
@@ -35,10 +37,24 @@ public class GoogleMapsFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
         // Inflate the layout for this fragment
         View rootView = inflater.inflate(R.layout.fragment_google_maps, container, false);
         Log.d("Evento", "Entre onCreate GMapsFragment");
         setUpMapIfNeeded();
+
+        ToggleButton changeMapTypeToggleButton = (ToggleButton) rootView.findViewById(R.id.mapTypeToggleButton);
+        changeMapTypeToggleButton.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked){
+                    setMapTypeToHybrid();
+                } else{
+                    setmMapTypeToNormal();
+                }
+            }
+        });
+
         return rootView;
     }
 
@@ -83,6 +99,14 @@ public class GoogleMapsFragment extends Fragment {
         mMap.addMarker(new MarkerOptions().position(establishmentCoordenates).title(establishmentTitle));
         mMap.setMyLocationEnabled(true);
 
+    }
+
+    private void setMapTypeToHybrid(){
+        mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
+    }
+
+    private void setmMapTypeToNormal(){
+        mMap.setMapType(GoogleMap.MAP_TYPE_NORMAL);
     }
 
 

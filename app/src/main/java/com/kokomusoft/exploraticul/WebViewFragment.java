@@ -49,7 +49,6 @@ public class WebViewFragment extends Fragment {
     }
 
     public void setUrl(String text){
-        Toast.makeText(getActivity().getApplicationContext(), text, Toast.LENGTH_SHORT).show();
     }
 
 

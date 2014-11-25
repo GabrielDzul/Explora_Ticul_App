@@ -1,7 +1,8 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
     <fragment xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
@@ -9,10 +10,22 @@
         android:layout_height="match_parent"
         android:id="@+id/map"
         tools:context="com.kokomusoft.exploraticul.MapsActivity"
-        android:name="com.google.android.gms.maps.MapFragment"/>
+        android:name="com.google.android.gms.maps.MapFragment">
+
+        </fragment>
+
+    <ToggleButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="0dp"
+        android:drawableTop="@drawable/ic_satellite"
+        android:drawablePadding="3dp"
+        android:id="@+id/mapTypeToggleButton"
+        android:layout_gravity="right|center_vertical" />
 
 
-    </LinearLayout>
+</FrameLayout>
 
 
 

@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <RelativeLayout
+            android:id="@+id/imageSection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/list_Image_item"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:src="@drawable/superior_room"
+                android:contentDescription="@string/list_hotel_image_desc" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/list_Image_item"
+                android:layout_alignBottom="@+id/list_Image_item"
+                android:layout_marginBottom="10dp"
+                android:paddingRight="20dp"
+                android:weightSum="1">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="#ba229d"
+                    android:paddingRight="20dp"
+                    android:layout_weight=".3"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="@string/hotel_list_base_price_text"
+                        android:textColor="#ffffff"
+                        android:id="@+id/list_item_base_price_text"
+                        android:layout_alignLeft="@+id/list_Image_item"
+                        android:layout_alignBottom="@+id/list_Image_item"
+                        android:paddingLeft="10dp"
+                        android:gravity="center"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceSmall"
+                        android:text="@string/hotel_list_base_price_text"
+                        android:textColor="#ffffff"
+                        android:id="@+id/list_item_base_price"
+                        android:layout_alignLeft="@+id/list_Image_item"
+                        android:layout_alignBottom="@+id/list_Image_item"
+                        android:paddingLeft="10dp"
+                        android:gravity="center"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            </RelativeLayout>
+
+        <!--Address and Name area-->
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageSection"
+            android:orientation="vertical"
+            android:layout_marginLeft="20dp">
+            <TextView
+                android:id="@+id/list_Item_Name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="6dp"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif-condensed"
+                android:textColor="#34495e"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="Large Text" />
+
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_map_marker"/>
+
+                <TextView
+                    android:id="@+id/list_Item_Address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-light"
+                    android:textColor="#34495e"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:textAppearance="?android:attr/textAppearanceSmall"
+                    android:text="Small Text"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+
+
+        </RelativeLayout>
+
+</LinearLayout>

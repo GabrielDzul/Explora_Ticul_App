@@ -3,35 +3,32 @@
 xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
-android:weightSum="1"
+    android:gravity="center"
 tools:context="com.kokomusoft.exploraticul.ShoestoreDetailFragment"
     android:orientation="vertical">
 
 <RelativeLayout
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_gravity="center_horizontal">
 
     <ImageView
-        android:layout_width="fill_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/shoeStoreImage"
         android:src="@drawable/superior_room"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/image_view_shoestore_detail" />
 
-
-    <View
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_weight="0.5"></View>
 
 </RelativeLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:padding="10dp"
         android:gravity="center">
 
 
@@ -39,37 +36,48 @@ tools:context="com.kokomusoft.exploraticul.ShoestoreDetailFragment"
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="7dp"
             android:textAppearance="?android:attr/textAppearanceLarge"
             android:text="Aria Shoes Market"
+            android:fontFamily="sans-serif-light"
             android:id="@+id/shoeStoreNametTxtView" />
 
-        <TextView
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:text="Calle 24 x 15 y 17 # 198f"
-            android:id="@+id/shoeStoreAdressTextView" />
+            android:layout_marginBottom="7dp">
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:drawableLeft="@drawable/ic_launcher"
-            android:text="Como llegar"
-            android:id="@+id/howToGetButton"
-            android:layout_gravity="center_horizontal" />
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_map_marker"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:fontFamily="sans-serif-light"
+                android:text="Calle 24 x 15 y 17 # 198f"
+                android:id="@+id/shoeStoreAdressTextView" />
+            </LinearLayout>
+
 
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:orientation="vertical">
+        android:layout_marginBottom="10dp"
+        android:orientation="vertical"
+        android:background="@drawable/shape">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-condensed"
             android:textAppearance="?android:attr/textAppearanceMedium"
             android:text="Horario"
             android:id="@+id/openTimeLabel"
@@ -78,6 +86,8 @@ tools:context="com.kokomusoft.exploraticul.ShoestoreDetailFragment"
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="4dp"
+            android:fontFamily="sans-serif-light"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="8:00 am - 2:00 pm"
             android:id="@+id/openTime1TextView"
@@ -86,6 +96,7 @@ tools:context="com.kokomusoft.exploraticul.ShoestoreDetailFragment"
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="sans-serif-light"
             android:textAppearance="?android:attr/textAppearanceSmall"
             android:text="4:00 pm - 8:00 pm"
             android:id="@+id/openTime2TextView"
@@ -94,32 +105,47 @@ tools:context="com.kokomusoft.exploraticul.ShoestoreDetailFragment"
 
         </LinearLayout>
 
-    <LinearLayout
+
+
+    <TableLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_gravity="center"
-        android:clickable="true">
+        android:gravity="center">
 
-        <Button
-            android:id="@+id/phoneNumber"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:gravity="left|center_vertical"
-            android:drawableLeft="@drawable/ic_launcher"
-            android:text="9971128335"/>
-        
+        <TableRow>
+            <Button
+                android:id="@+id/howToGetButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/ic_how_to_get"
+                android:drawablePadding="10dp"
+                android:text="Como llegar"
+                android:gravity="center"
+                android:layout_marginBottom="7dp"/>
+        </TableRow>
 
-
-        <Button
-            android:id="@+id/webSiteUrl"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:drawableLeft="@drawable/ic_launcher"
-            android:text="mira todie"/>
-
-    </LinearLayout>
+        <TableRow>
+            <Button
+                android:id="@+id/phoneNumber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left|center_vertical"
+                android:drawableLeft="@drawable/ic_telephone"
+                android:drawablePadding="10dp"
+                android:layout_marginBottom="7dp"
+                android:text="9971128335"/>
+        </TableRow>
+        <TableRow>
+            <Button
+                android:id="@+id/webSiteUrl"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:drawableLeft="@drawable/ic_website"
+                android:drawablePadding="10dp"
+                android:text="mira todie"/>
+        </TableRow>
+    </TableLayout>
 
 
 

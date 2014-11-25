@@ -132,10 +132,10 @@ public class ShoestoreDetailFragment extends Fragment {
             ((ImageView) rootView.findViewById(R.id.shoeStoreImage)).setImageDrawable(shoeStore.getImage());
             ((TextView) rootView.findViewById(R.id.shoeStoreNametTxtView)).setText(shoeStore.getName());
             ((TextView) rootView.findViewById(R.id.shoeStoreAdressTextView)).setText(shoeStore.getAddress());
-            ((Button) rootView.findViewById(R.id.phoneNumber)).setText(shoeStore.getPhoneNumber());
-            Log.d("Y pongo",shoeStore.getPhoneNumber() );
 
-            (rootView.findViewById(R.id.phoneNumber)).setOnClickListener(new View.OnClickListener() {
+            Button phoneButton = (Button)rootView.findViewById(R.id.phoneNumber);
+            phoneButton.setText(shoeStore.getPhoneNumber());
+            phoneButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Intent callIntent = new Intent(Intent.ACTION_DIAL );
@@ -144,9 +144,10 @@ public class ShoestoreDetailFragment extends Fragment {
                 }
             });
 
-
-            ((Button)rootView.findViewById(R.id.webSiteUrl)).setText(shoeStore.getWebSite());
-            rootView.findViewById(R.id.webSiteUrl).setOnClickListener(new View.OnClickListener() {
+            Button webSiteButton = (Button)rootView.findViewById(R.id.webSiteUrl);
+            String shortUrl = shortUrl(shoeStore.getWebSite());
+            webSiteButton.setText(shortUrl);
+            webSiteButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     Bundle bundle = new Bundle();
@@ -179,5 +180,12 @@ public class ShoestoreDetailFragment extends Fragment {
         }
 
         return rootView;
+    }
+
+    private String shortUrl(String url){
+       String urlToShort = url;
+        String shortenedUrl;
+        shortenedUrl = urlToShort.substring(7);
+        return shortenedUrl;
     }
 }

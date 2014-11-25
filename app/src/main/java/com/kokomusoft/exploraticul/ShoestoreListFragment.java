@@ -3,37 +3,18 @@ package com.kokomusoft.exploraticul;
 import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.ListFragment;
-import android.support.v4.view.MenuItemCompat;
-import android.text.Html;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 import android.widget.SearchView;
-import android.widget.SimpleAdapter;
-import android.widget.Toast;
 
 
 import com.kokomusoft.exploraticul.Model.ShoeStore;
-import com.kokomusoft.exploraticul.controller.ShoeStoreAdapter;
-
-import org.apache.http.client.methods.HttpOptions;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.BufferedReader;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
+import com.kokomusoft.exploraticul.ListAdapters.ShoeStoreAdapter;
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
-import java.util.HashMap;
 
 /**
  * A list fragment representing a list of Shoes stores. This fragment
@@ -46,15 +27,6 @@ import java.util.HashMap;
  */
 public class ShoestoreListFragment extends ListFragment {
     ShoeStoreAdapter adapter;
-    /*ListView hotelsListView;
-    String[] hotelImages;
-    String[] hotelNames;
-    String[] hotelAddresses;
-    String jsonString = null;
-
-    private final String KEY_NAME = "name";
-    private final  String KEY_ADDRESS = "address";
-    private final String KEY_IMAGE = "image";*/
 
     /**
      * The serialization (saved instance state) Bundle key representing the
@@ -106,7 +78,6 @@ public class ShoestoreListFragment extends ListFragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Log.d("Evento", "Ya entre a Oncreate de ListFragment");
         ArrayList<ShoeStore> shoeStores = getShoeStores();
         setAdapter(shoeStores);
 
