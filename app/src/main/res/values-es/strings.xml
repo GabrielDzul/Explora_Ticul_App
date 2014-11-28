@@ -44,5 +44,15 @@
     <string name="title_activity_splash_screen">Descubre Ticul</string>
     <string name="app_splash">splash screen image</string>
     <string name="app_description">Una guia turística y comercial en la palma de tus manos.</string>
+    <string name="drawer_open">Menú abierto</string>
+    <string name="drawer_close">Menú cerrado</string>
+    <string name="drawer_menu_title">Menú</string>
+
+    <string-array name="drawerOptions">
+        <item>Zapaterías</item>
+        <item>Artesanías</item>
+        <item>Restaurantes</item>
+        <item>Hoteles</item>
+    </string-array>
 
 </resources>
