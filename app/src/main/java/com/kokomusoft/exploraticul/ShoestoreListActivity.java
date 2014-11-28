@@ -2,7 +2,15 @@ package com.kokomusoft.exploraticul;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v4.app.ActionBarDrawerToggle;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarActivity;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.Toast;
 
 /**
  * An activity representing a list of Shoes stores. This activity
@@ -22,6 +30,10 @@ import android.support.v7.app.ActionBarActivity;
  */
 public class ShoestoreListActivity extends ActionBarActivity
         implements ShoestoreListFragment.Callbacks, ShoestoreDetailFragment.OnFragmentSendText{
+    private String[] mDrawerMenuOptions;
+    private DrawerLayout mDrawerLayout;
+    private ListView mDrawerList;
+    private ActionBarDrawerToggle mDrawerToggle;
 
     /**
      * Whether or not the activity is in two-pane mode, i.e. running on a tablet
@@ -33,6 +45,34 @@ public class ShoestoreListActivity extends ActionBarActivity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shoestore_list);
+
+        mDrawerMenuOptions = getResources().getStringArray(R.array.drawerOptions);
+        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
+        mDrawerList = (ListView) findViewById(R.id.left_drawer);
+        mDrawerToggle = new ActionBarDrawerToggle(this,mDrawerLayout,R.drawable.ic_drawer,
+                R.string.drawer_open, R.string.drawer_close){
+
+
+        };
+
+        // Set the drawer toggle as the DrawerListener
+        mDrawerLayout.setDrawerListener(mDrawerToggle);
+        getSupportActionBar().setHomeButtonEnabled(true);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+
+        // Set the adapter for the list view
+        mDrawerList.setAdapter(new ArrayAdapter(this,
+                android.R.layout.simple_list_item_1, mDrawerMenuOptions));
+        mDrawerList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                if (position == 3){
+                    Intent hotelsIntent = new Intent(getApplicationContext(), HotelListActivity.class);
+                    startActivity(hotelsIntent);
+                    finish();
+                }
+            }
+        });
 
         if (findViewById(R.id.shoestore_detail_container) != null) {
             // The detail container view will be present only in the
@@ -49,6 +89,22 @@ public class ShoestoreListActivity extends ActionBarActivity
         }
 
         // TODO: If exposing deep links into your app, handle intents here.
+    }
+
+    @Override
+    protected void onPostCreate(Bundle savedInstanceState) {
+        super.onPostCreate(savedInstanceState);
+        mDrawerToggle.syncState();
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        if (mDrawerToggle.onOptionsItemSelected(item)){
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+
     }
 
     /**
